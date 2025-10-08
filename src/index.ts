@@ -81,7 +81,7 @@ import { execFileSync } from 'node:child_process'
     // Handle codex command
     try {
       const { runCodex } = await import('@/codex/runCodex');
-      
+
       // Parse startedBy argument
       let startedBy: 'daemon' | 'terminal' | undefined = undefined;
       for (let i = 1; i < args.length; i++) {
@@ -89,12 +89,58 @@ import { execFileSync } from 'node:child_process'
           startedBy = args[++i] as 'daemon' | 'terminal';
         }
       }
-      
+
       const {
         credentials
       } = await authAndSetupMachineIfNeeded();
       await runCodex({credentials, startedBy});
       // Do not force exit here; allow instrumentation to show lingering handles
+    } catch (error) {
+      console.error(chalk.red('Error:'), error instanceof Error ? error.message : 'Unknown error')
+      if (process.env.DEBUG) {
+        console.error(error)
+      }
+      process.exit(1)
+    }
+    return;
+  } else if (subcommand === 'code') {
+    // Handle code command (@just-every/code CLI)
+    try {
+      const { runCode } = await import('@/codex/runCode');
+
+      // Parse arguments
+      let startedBy: 'daemon' | 'terminal' | undefined = undefined;
+      let model: string | undefined = undefined;
+      let permissionMode: 'default' | 'read-only' | 'safe-yolo' | 'yolo' = 'default';
+      const additionalArgs: string[] = [];
+
+      for (let i = 1; i < args.length; i++) {
+        const arg = args[i];
+
+        if (arg === '--started-by' && i + 1 < args.length) {
+          startedBy = args[++i] as 'daemon' | 'terminal';
+        } else if (arg === '--model' && i + 1 < args.length) {
+          model = args[++i];
+        } else if (arg === '--yolo') {
+          permissionMode = 'yolo';
+        } else if (arg === '--safe-yolo') {
+          permissionMode = 'safe-yolo';
+        } else if (arg === '--read-only') {
+          permissionMode = 'read-only';
+        } else {
+          // Pass through other arguments to Code CLI
+          additionalArgs.push(arg);
+        }
+      }
+
+      const { credentials } = await authAndSetupMachineIfNeeded();
+      await runCode({
+        credentials,
+        startedBy,
+        model,
+        permissionMode,
+        additionalArgs
+      });
     } catch (error) {
       console.error(chalk.red('Error:'), error instanceof Error ? error.message : 'Unknown error')
       if (process.env.DEBUG) {
@@ -295,6 +341,7 @@ ${chalk.bold('Usage:')}
   happy [options]         Start Claude with mobile control
   happy auth              Manage authentication
   happy codex             Start Codex mode
+  happy code              Start Code CLI mode (@just-every/code)
   happy connect           Connect AI vendor API keys
   happy notify            Send push notification
   happy daemon            Manage background service that allows
@@ -303,8 +350,10 @@ ${chalk.bold('Usage:')}
 
 ${chalk.bold('Examples:')}
   happy                    Start session
-  happy --yolo             Start with bypassing permissions 
+  happy --yolo             Start with bypassing permissions
                             happy sugar for --dangerously-skip-permissions
+  happy code --model gpt-5-codex --yolo
+                           Start Code CLI with GPT-5 and bypass approvals
   happy auth login --force Authenticate
   happy doctor             Run diagnostics
 

@@ -68,7 +68,7 @@
     "postinstall": "node scripts/unpack-tools.cjs"
   },
   "dependencies": {
-    "@anthropic-ai/claude-code": "2.0.1",
+    "@anthropic-ai/claude-code": "^2.0.9",
     "@anthropic-ai/sdk": "0.65.0",
     "@modelcontextprotocol/sdk": "^1.15.1",
     "@stablelib/base64": "^2.0.1",
@@ -97,6 +97,9 @@
     "tmp": "^0.2.5",
     "tweetnacl": "^1.0.3",
     "zod": "^3.23.8"
+  },
+  "optionalDependencies": {
+    "@just-every/code": "^0.2.188"
   },
   "devDependencies": {
     "@eslint/compat": "^1",

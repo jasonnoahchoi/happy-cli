@@ -10,10 +10,10 @@
     ansi-styles "^6.2.1"
     is-fullwidth-code-point "^5.0.0"
 
-"@anthropic-ai/claude-code@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@anthropic-ai/claude-code/-/claude-code-2.0.1.tgz#4bf721dc7d129105987440b65374ceb438326910"
-  integrity sha512-2SboYcdJ+dsE2K784dbJ4ohVWlAkLZhU7mZG1lebyG6TvGLXLhjc2qTEfCxSeelCjJHhIh/YkNpe06veB4IgBw==
+"@anthropic-ai/claude-code@^2.0.9":
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/@anthropic-ai/claude-code/-/claude-code-2.0.9.tgz#0f018987cee57621815d0af18d8b280ef117e588"
+  integrity sha512-2IAXb7OogfoTVv7fa4vnMxhUSnQ5yx7ije0xmjvLKrw7CGEiE2cvxKeFGg7nHjL0EE64CrVWYscS3SwD/7/HhQ==
   optionalDependencies:
     "@img/sharp-darwin-arm64" "^0.33.5"
     "@img/sharp-darwin-x64" "^0.33.5"
@@ -545,6 +545,42 @@
   dependencies:
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
+
+"@just-every/code-darwin-arm64@0.2.188":
+  version "0.2.188"
+  resolved "https://registry.yarnpkg.com/@just-every/code-darwin-arm64/-/code-darwin-arm64-0.2.188.tgz#ab24759849ad7c6ee514e78eb71179f41ee2a409"
+  integrity sha512-5wg/BvMNidoI49NMSYJCPawlxbRAfRQffWyObVwgYix0qlAgQtB06LPU/QI1jAS4Hs1lkZGfDSBJixRE6Y19Lg==
+
+"@just-every/code-darwin-x64@0.2.188":
+  version "0.2.188"
+  resolved "https://registry.yarnpkg.com/@just-every/code-darwin-x64/-/code-darwin-x64-0.2.188.tgz#258eeb0b01603e47302d18d6444e5f598d954fa4"
+  integrity sha512-27f478LagqK7oDwwHc3v1XekrbEvrstbLXSjOb41yMbvbbfhaZz1L7l3gslbtTOiRMpq2zB7pcDUn90O8Y9LuA==
+
+"@just-every/code-linux-arm64-musl@0.2.188":
+  version "0.2.188"
+  resolved "https://registry.yarnpkg.com/@just-every/code-linux-arm64-musl/-/code-linux-arm64-musl-0.2.188.tgz#b439b8ae56251b56d4f758d7619314bd1cb63b89"
+  integrity sha512-je5j72nPnQEnItTk188RXvjYIpiiNUmaz+z+3jqqIldlY/iNP5vHKob0EWdEv02Nw4TJyRYdCjS+qEuGsEzIPQ==
+
+"@just-every/code-linux-x64-musl@0.2.188":
+  version "0.2.188"
+  resolved "https://registry.yarnpkg.com/@just-every/code-linux-x64-musl/-/code-linux-x64-musl-0.2.188.tgz#e6148366780c30beed614b907a9eba8b6fc6e409"
+  integrity sha512-1oEc81zEMga58QlUGBrYO9zPcErFTVzp7h3rMMkbGo9VBZhYXmDeYWbffta241ZXu38bGRqbWR4UW6kMRBEMag==
+
+"@just-every/code-win32-x64@0.2.188":
+  version "0.2.188"
+  resolved "https://registry.yarnpkg.com/@just-every/code-win32-x64/-/code-win32-x64-0.2.188.tgz#51c95c4a02d01400dc403d22d08b17714a0f9df4"
+  integrity sha512-6dlCo7kwJIqfEKdYkw8QCq40SZBNIRi5EHadNPm1H4f6U0Kz1lojMgC8LdVCGsjz03iFlz3AIYKDH35DKxFzCA==
+
+"@just-every/code@^0.0.8":
+  version "0.2.188"
+  resolved "https://registry.yarnpkg.com/@just-every/code/-/code-0.2.188.tgz#d6998da056cbe8456de796f0799ee3e0949febe8"
+  integrity sha512-vU29YuTLwIdNDhKs9lDJPJ4DHaxZ3v8JCFoztuY/6k9n5g5Q3bIsvPJqWP6gK08GoD+JzD6gzcwA7olmefyfYA==
+  optionalDependencies:
+    "@just-every/code-darwin-arm64" "0.2.188"
+    "@just-every/code-darwin-x64" "0.2.188"
+    "@just-every/code-linux-arm64-musl" "0.2.188"
+    "@just-every/code-linux-x64-musl" "0.2.188"
+    "@just-every/code-win32-x64" "0.2.188"
 
 "@modelcontextprotocol/sdk@^1.15.1":
   version "1.17.3"
