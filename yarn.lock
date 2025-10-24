@@ -571,7 +571,7 @@
   resolved "https://registry.yarnpkg.com/@just-every/code-win32-x64/-/code-win32-x64-0.2.188.tgz#51c95c4a02d01400dc403d22d08b17714a0f9df4"
   integrity sha512-6dlCo7kwJIqfEKdYkw8QCq40SZBNIRi5EHadNPm1H4f6U0Kz1lojMgC8LdVCGsjz03iFlz3AIYKDH35DKxFzCA==
 
-"@just-every/code@^0.0.8":
+"@just-every/code@^0.2.188":
   version "0.2.188"
   resolved "https://registry.yarnpkg.com/@just-every/code/-/code-0.2.188.tgz#d6998da056cbe8456de796f0799ee3e0949febe8"
   integrity sha512-vU29YuTLwIdNDhKs9lDJPJ4DHaxZ3v8JCFoztuY/6k9n5g5Q3bIsvPJqWP6gK08GoD+JzD6gzcwA7olmefyfYA==
