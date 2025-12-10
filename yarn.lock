@@ -11,9 +11,9 @@
     is-fullwidth-code-point "^5.0.0"
 
 "@anthropic-ai/claude-code@^2.0.45":
-  version "2.0.55"
-  resolved "https://registry.yarnpkg.com/@anthropic-ai/claude-code/-/claude-code-2.0.55.tgz#9a2bd74ec001802603583d1437781a13b10979c9"
-  integrity sha512-IVY6J2KgTP5BiCbLmuP3kAl8jbXfd6yGoXtvc0L0eiZwxJUMa+cubUU0U8qHRnVkNmDAis+O4P00KmeuGzSLWg==
+  version "2.0.64"
+  resolved "https://registry.yarnpkg.com/@anthropic-ai/claude-code/-/claude-code-2.0.64.tgz#c18a9d56e434b49722fe4b1535a130b303231a0a"
+  integrity sha512-ey4f2xNUnYGJk8CNmLk4467m7FxDIfdB7X8ohiDDVciaAwSxW97ymF5c3cdHGazn9dUg1lNPfwSo3KAOWw1Q2A==
   optionalDependencies:
     "@img/sharp-darwin-arm64" "^0.33.5"
     "@img/sharp-darwin-x64" "^0.33.5"
